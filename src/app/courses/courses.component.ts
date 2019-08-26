@@ -1,3 +1,4 @@
+import { CoursesService } from '../courses.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class CoursesComponent implements OnInit {
-
-  constructor() { }
+export class CoursesComponent {
+  courses;
+  constructor() { 
+    let service = new CoursesService();
+    this.courses =service.getCourses();
+  }
 
   ngOnInit() {
   }
