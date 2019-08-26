@@ -8,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent {
   courses;
-  constructor() { 
-    let service = new CoursesService();
-    this.courses =service.getCourses();
+  constructor(service: CoursesService) { 
+    this.courses = service.getCourses();
   }
 
   ngOnInit() {
